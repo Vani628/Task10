@@ -1,0 +1,81 @@
+
+$primary-color: #3498db;
+$secondary-color: #e74c3c;
+$tertiary-color: #2ecc71;
+$background-color: #f8f9fa;
+$text-color: #333;
+$base-padding: 20px;
+$font-size-base: 16px;
+$box-margin: $base-padding / 2; 
+$box-padding: $base-padding * 1.5; 
+
+@mixin box-style($bg-color) {
+    background-color: $bg-color;
+    padding: $box-padding; 
+    border: 1px solid #ddd;
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.box {
+    @include box-style(white); 
+    margin: $box-margin; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+
+    h2 {
+        color: $text-color;
+        font-size: $font-size-base + 4px; 
+    }
+
+    p {
+        color: darken($text-color, 20%); 
+        font-size: $font-size-base; 
+    }
+    .button {
+      padding: $base-padding; 
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+    .primary-btn {
+      @extend .button; 
+      background-color: $primary-color;
+  
+      &:hover {
+          background-color: darken($primary-color, 10%); 
+      }
+  }
+  
+  .secondary-btn {
+      @extend .button; 
+      background-color: $secondary-color;
+  
+      &:hover {
+          background-color: darken($secondary-color, 10%); 
+      }
+  }
+  
+  .tertiary-btn {
+      @extend .button; 
+      background-color: $tertiary-color;
+  
+      &:hover {
+          background-color: darken($tertiary-color, 10%); 
+  }
+  }
+}
+.container {
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: $base-padding; 
+    h1{
+      text-align: center;
+    }
+}
+body{
+  background-color: #8ec3d3;
+}
